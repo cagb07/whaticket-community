@@ -32,7 +32,9 @@ ENV NODE_ENV=production
 ENV PORT=3000
 ENV CHROME_BIN=google-chrome-stable
 
-EXPOSE 3000
+EXPOSE 8080
+
+CMD ["npm", "start"]
 
 ENTRYPOINT ["dumb-init", "--"]
 CMD dockerize -wait tcp://${DB_HOST}:3306 \
